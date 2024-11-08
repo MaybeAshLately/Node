@@ -14,12 +14,12 @@ The Node’s task is to measure RF spectrum occupancy and send the results to th
 
 Measurment has format of an 126 8-bits integers array, each containing the number of signals detected on the corresponding channels. The scanner operates in the frequency of 2,4 - 2,525 GHz. Each channel is 1 MHz wide. Scanner can detect eg. Wi-Fi and bluetooth signals. Due to I2C limitations each measurment is send in for 4 parts (32, 32, 32 and 30 bytes).
 
-**Warning** in this example, the node adress is hardcoded as "0". To use multiple nodes (slaves), you must change their adresses. On I2C bus there can no be two devices with the same adress. You can modify the address simply by changing the following line:
+**Warning** in this example, the node adress is hardcoded as "8". To use multiple nodes (slaves), you must change their adresses. On I2C bus there can no be two devices with the same adress. You can modify the address simply by changing the following line:
 
 ```bash
-const int slaveAddress=0;
+const int slaveAddress=8;
 ```
-Addresses can range from 0 to 127.
+Addresses can range from 8 to 126.
 
 # Components and wiring 
 The node part of RF scanner uses the following components:

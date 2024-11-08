@@ -6,7 +6,7 @@
 const int CE_PIN=9;
 const int CSN_PIN=10;
 const int interruptPin=2;
-const int slaveAddress=0;
+const int slaveAddress=8;
 
 RF24 radio(CE_PIN, CSN_PIN);
 const uint8_t num_channels = 126;
