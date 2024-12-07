@@ -33,7 +33,7 @@ To connect nRF24 to Arduino:
 - SCK connects to pin 13, 
 - MISO connects to pin 12
 - VCC connects to 3.3V,
-- GNF connects to GND.
+- GND connects to GND.
 
 
 The I2C bus uses pins SCL and SDA. The master device is also connected to pin 2, which wakes up the Arduino from sleep mode using an interrupt routine . 

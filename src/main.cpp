@@ -6,7 +6,7 @@
 const int CE_PIN=9;
 const int CSN_PIN=10;
 const int interruptPin=2;
-const int slaveAddress=8;
+const int slaveAddress=10;
 
 RF24 radio(CE_PIN, CSN_PIN);
 const uint8_t num_channels = 126;
@@ -24,7 +24,6 @@ void setFlag();
 
 
 void setup() {
-  //Serial.begin(9600); //for debbuging
   if (!radio.begin()) {
     while (true) {}
   }
@@ -50,7 +49,6 @@ void setup() {
 
   flag=false;
 
-  //Serial.println("setup finished"); //for debbuging
 }
 
 
@@ -78,7 +76,6 @@ void setFlag() {
 
 
 void requestEvent() {
-//Serial.println("requestEvent"); //for debbuging
 
 if(messagePart==0) performMeasurment();
 if(messagePart<3)
@@ -97,14 +94,6 @@ else //messegePart==3
   }
   messagePart=0;
 }
-
- //for debbuging
-  /*Serial.flush();
-  for (int i = 0; i < num_channels; ++i) {
-    Serial.print(values[i]);
-    Serial.print(" ");
-    }
-    Serial.println();*/
 }
 
 
